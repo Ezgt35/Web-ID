@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Chat Room</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+    }
+
+    input, button {
+      background-color: #111;
+      color: #0f0;
+      border: 1px solid #0f0;
+      padding: 8px;
+      margin-top: 10px;
+    }
+
+    #messages {
+      border: 1px solid #0f0;
+      background-color: #111;
+      height: 200px;
+      overflow: auto;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    h2 {
+      color: #0f0;
+    }
+
+    #chat {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Masukkan Room Code:</h2>
+  <input id="roomInput" placeholder="Contoh: ABC123" />
+  <button onclick="joinRoom()">Join</button>
+
+  <div id="chat" style="display:none;">
+    <div id="messages"></div>
+    <input id="messageInput" placeholder="Tulis pesan..." />
+    <button onclick="sendMessage()">Kirim</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
